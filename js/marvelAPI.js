@@ -1,5 +1,5 @@
 var marvelAPI = secret['marvelAPI'];
-var marvelURL = 'http://gateway.marvel.com/v1/public/'
+var marvelURL = 'https://gateway.marvel.com/v1/public/'
 var marvelURLHeader=`ts=1&apikey=${marvelAPI.apiKey}&hash=${marvelAPI.hash}`;
 
 const getdata = async (URL)=>{
