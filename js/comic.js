@@ -12,7 +12,7 @@ const characterComics = document.querySelector('#character-comics');
 
 //redirect to different pages
 let redirect = (type)=>{
-    window.location.href = `./html/${type[0]}.html?id=${type[1]}`;
+    window.location.href = `./${type[0]}.html?id=${type[1]}`;
 }
 
 //check if the comic is marked favourite
