@@ -1,25 +1,29 @@
+if(localStorage.getItem('favChar')==null){
+    let idArr = [];
+    let idString = JSON.stringify(idArr)
+    localStorage.setItem('favChar',idString);
+}
+if(localStorage.getItem('favComic')==null){
+    let idArr = [];
+    let idString = JSON.stringify(idArr)
+    localStorage.setItem('favComic',idString);
+}
 //Toggle favourite
 const toggleFav = (type,id)=>{
     let idArr = [];
     let favBtn = document.querySelector(`#${type}-${id}`);
     //if character is not added as favourite add else remove
-    if(localStorage.getItem(type)==null){
+    idArr = JSON.parse(localStorage.getItem(type));
+    let idx = idArr.indexOf(id);
+    if(idx==-1){
         idArr.push(id);
         favBtn.innerHTML = '<i class="fa-solid fa-star"></i>';
         favBtn.style.display = 'block';
-    }else{
-        idArr = JSON.parse(localStorage.getItem(type));
-        let idx = idArr.indexOf(id);
-        if(idx==-1){
-            idArr.push(id);
-            favBtn.innerHTML = '<i class="fa-solid fa-star"></i>';
-            favBtn.style.display = 'block';
-        }
-        else{
-            idArr.splice(idx,1);
-            favBtn.innerHTML = '<i class="fa-regular fa-star"></i>';
-            favBtn.style.display = 'none';
-        }
+    }
+    else{
+        idArr.splice(idx,1);
+        favBtn.innerHTML = '<i class="fa-regular fa-star"></i>';
+        favBtn.style.display = 'none';
     }
     //store data to localstorage
     let idString = JSON.stringify(idArr)
