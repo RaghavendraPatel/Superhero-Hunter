@@ -5,7 +5,7 @@ let searchBar = document.querySelector('#search-bar');
 let searchSuggestions = document.querySelector('#search-suggestions>ul')
 
 let redirect = (type)=>{
-    window.location.href = `/html/${type[0]}.html?id=${type[1]}`;
+    window.location.href = `./html/${type[0]}.html?id=${type[1]}`;
 }
 
 //display characters
