@@ -8,9 +8,7 @@ if(localStorage.getItem('favComic')==null){
     let idString = JSON.stringify(idArr)
     localStorage.setItem('favComic',idString);
 }
-let redirect = (type)=>{
-    window.location.href = `./${type[0]}.html?id=${type[1]}`;
-}
+
 //Toggle favourite
 const toggleFav = (type,id)=>{
     let idArr = [];
