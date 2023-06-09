@@ -2,6 +2,7 @@ let characterContainer = document.querySelector('#character-container');
 let comicContainer = document.querySelector('#comic-container');
 
 let redirect = (type)=>{
+    console.log('first')
     window.location.href = `./${type[0]}.html?id=${type[1]}`;
 }
 
